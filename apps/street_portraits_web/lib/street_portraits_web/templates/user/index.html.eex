@@ -5,7 +5,7 @@
     <tr>
       <th>Name</th>
       <th>Email</th>
-      <th>Phash</th>
+      <th>Account Type</th>
 
       <th></th>
     </tr>
@@ -15,7 +15,7 @@
     <tr>
       <td><%= user.name %></td>
       <td><%= user.email %></td>
-      <td><%= user.phash %></td>
+      <td><%= user.account_type.type %></td>
 
       <td>
         <%= link "Show", to: Routes.user_path(@conn, :show, user) %>

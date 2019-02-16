@@ -4,6 +4,7 @@
   <thead>
     <tr>
       <th>Access key</th>
+      <th>Permissions</th>
 
       <th></th>
     </tr>
@@ -12,6 +13,7 @@
 <%= for access_key <- @access_keys do %>
     <tr>
       <td><%= access_key.access_key %></td>
+      <td><%= access_key.account_type.type %></td>
 
       <td>
         <%= link "Show", to: Routes.access_key_path(@conn, :show, access_key) %>

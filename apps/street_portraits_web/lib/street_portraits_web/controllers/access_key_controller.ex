@@ -10,12 +10,18 @@ defmodule StreetPortraitsWeb.AccessKeyController do
   end
 
   def new(conn, _params) do
+    account_types = Accounts.list_account_types()
     changeset = Accounts.change_access_key(%AccessKey{})
-    render(conn, "new.html", changeset: changeset)
+    render(conn, "new.html", changeset: changeset, account_types: account_types)
   end
 
   def create(conn, %{"access_key" => access_key_params}) do
-    case Accounts.create_access_key(access_key_params) do
+    { account_type_id, _ } = access_key_params["type"] |> Integer.parse
+
+    key = UUID.uuid4()
+    access_key_params = Map.put(access_key_params, "access_key", key)
+
+    case Accounts.create_access_key(access_key_params, account_type_id) do
       {:ok, access_key} ->
         conn
         |> put_flash(:info, "Access key created successfully.")

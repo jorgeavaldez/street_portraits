@@ -5,9 +5,11 @@
     </div>
   <% end %>
 
-  <%= label f, :access_key %>
-  <%= text_input f, :access_key %>
-  <%= error_tag f, :access_key %>
+  <%= inputs_for f, :account_type, fn utf -> %>
+    <%= label utf, :type, class: "control-label" %>
+    <%= select f, :type, @account_types |> Enum.map(&{&1.type, &1.id}), class: "form-control" %>
+    <%= error_tag utf, :type %>
+  <%= end %>
 
   <div>
     <%= submit "Save" %>

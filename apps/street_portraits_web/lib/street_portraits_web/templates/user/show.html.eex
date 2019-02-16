@@ -13,8 +13,8 @@
   </li>
 
   <li>
-    <strong>Phash:</strong>
-    <%= @user.phash %>
+    <strong>Account Type:</strong>
+    <%= @user.account_type.type %>
   </li>
 
 </ul>

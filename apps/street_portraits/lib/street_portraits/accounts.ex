@@ -115,6 +115,7 @@ defmodule StreetPortraits.Accounts do
   """
   def list_access_keys do
     Repo.all(AccessKey)
+    |> Repo.preload(:account_type)
   end
 
   @doc """
@@ -131,7 +132,11 @@ defmodule StreetPortraits.Accounts do
       ** (Ecto.NoResultsError)
 
   """
-  def get_access_key!(id), do: Repo.get!(AccessKey, id)
+  def get_access_key!(id), do: Repo.get!(AccessKey, id) |> Repo.preload(:account_type)
+
+  def check_access_key!(access_key) do
+    Repo.get_by(AccessKey, access_key: access_key)
+  end
 
   @doc """
   Creates a access_key.
@@ -145,9 +150,10 @@ defmodule StreetPortraits.Accounts do
       {:error, %Ecto.Changeset{}}
 
   """
-  def create_access_key(attrs \\ %{}) do
+  def create_access_key(attrs \\ %{}, account_type_id) do
     %AccessKey{}
     |> AccessKey.changeset(attrs)
+    |> Ecto.Changeset.put_change(:account_type_id, account_type_id)
     |> Repo.insert()
   end
 
@@ -210,7 +216,7 @@ defmodule StreetPortraits.Accounts do
 
   """
   def list_users do
-    Repo.all(User)
+    Repo.all(User) |> Repo.preload(:account_type)
   end
 
   @doc """
@@ -227,7 +233,7 @@ defmodule StreetPortraits.Accounts do
       ** (Ecto.NoResultsError)
 
   """
-  def get_user!(id), do: Repo.get!(User, id)
+  def get_user!(id), do: Repo.get!(User, id) |> Repo.preload(:account_type)
 
   @doc """
   Creates a user.
@@ -241,9 +247,10 @@ defmodule StreetPortraits.Accounts do
       {:error, %Ecto.Changeset{}}
 
   """
-  def create_user(attrs \\ %{}) do
+  def create_user(attrs \\ %{}, account_type_id) do
     %User{}
     |> User.changeset(attrs)
+    |> Ecto.Changeset.put_change(:account_type_id, account_type_id)
     |> Repo.insert()
   end
 
@@ -294,6 +301,14 @@ defmodule StreetPortraits.Accounts do
     User.changeset(user, %{})
   end
 
+  @doc """
+  Returns a List of valid permissions options.
+
+  ## Examples
+
+  iex> valid_permissions()
+  ["can_modify_neighbors", "can_modify_portraits", "can_modify_outreach", "sudo"]
+  """
   def valid_permissions do
     [
       "can_modify_neighbors",

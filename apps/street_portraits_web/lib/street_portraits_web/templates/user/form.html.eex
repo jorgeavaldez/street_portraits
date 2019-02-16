@@ -13,9 +13,13 @@
   <%= text_input f, :email %>
   <%= error_tag f, :email %>
 
-  <%= label f, :phash %>
-  <%= text_input f, :phash %>
-  <%= error_tag f, :phash %>
+  <%= label f, :password %>
+  <%= password_input f, :password %>
+  <%= error_tag f, :password %>
+
+  <%= label f, :access_key %>
+  <%= text_input f, :access_key %>
+  <%= error_tag f, :access_key %>
 
   <div>
     <%= submit "Save" %>
