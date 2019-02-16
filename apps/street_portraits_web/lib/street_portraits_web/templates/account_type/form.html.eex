@@ -9,9 +9,17 @@
   <%= text_input f, :type %>
   <%= error_tag f, :type %>
 
-  <%= label f, :actions %>
-  <%= multiple_select f, :actions, ["Option 1": "option1", "Option 2": "option2"] %>
-  <%= error_tag f, :actions %>
+  <div class="form-group">
+    <%= label f, :actions, class: "control-label" %>
+    <br>
+    <%= for permission <- @valid_permissions do %>
+      <%= checkbox :checked_actions, "#{permission.action}", checked: permission.isChecked %>
+      <%= "#{permission.action}" %>
+      <br>
+    <%= end %>
+
+    <%= error_tag f, :actions %>
+  </div>
 
   <div>
     <%= submit "Save" %>

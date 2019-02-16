@@ -9,7 +9,11 @@
 
   <li>
     <strong>Actions:</strong>
-    <%= @account_type.actions %>
+    <ul>
+      <%= for action <- @account_type.actions do %>
+        <li><%= "#{action}" %></li>
+       <%= end %>
+    </ul>
   </li>
 
 </ul>

@@ -13,7 +13,13 @@
 <%= for account_type <- @account_types do %>
     <tr>
       <td><%= account_type.type %></td>
-      <td><%= account_type.actions %></td>
+      <td>[
+        <%= case account_type.actions do
+              nil -> ""
+              _ -> Enum.join(account_type.actions,", ")
+            end
+        %>
+      ]</td>
 
       <td>
         <%= link "Show", to: Routes.account_type_path(@conn, :show, account_type) %>

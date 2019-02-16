@@ -293,4 +293,13 @@ defmodule StreetPortraits.Accounts do
   def change_user(%User{} = user) do
     User.changeset(user, %{})
   end
+
+  def valid_permissions do
+    [
+      "can_modify_neighbors",
+      "can_modify_portraits",
+      "can_modify_outreach",
+      "sudo",
+    ]
+  end
 end
