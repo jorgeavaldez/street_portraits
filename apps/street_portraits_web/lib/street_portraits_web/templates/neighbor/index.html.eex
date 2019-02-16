@@ -1,0 +1,34 @@
+<h1>Listing Neighbors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Approx location</th>
+      <th>Phone</th>
+      <th>Address</th>
+      <th>Preferred channel</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for neighbor <- @neighbors do %>
+    <tr>
+      <td><%= neighbor.name %></td>
+      <td><%= neighbor.approx_location %></td>
+      <td><%= neighbor.phone %></td>
+      <td><%= neighbor.address %></td>
+      <td><%= neighbor.preferred_channel %></td>
+
+      <td>
+        <%= link "Show", to: Routes.neighbor_path(@conn, :show, neighbor) %>
+        <%= link "Edit", to: Routes.neighbor_path(@conn, :edit, neighbor) %>
+        <%= link "Delete", to: Routes.neighbor_path(@conn, :delete, neighbor), method: :delete, data: [confirm: "Are you sure?"] %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Neighbor", to: Routes.neighbor_path(@conn, :new) %></span>

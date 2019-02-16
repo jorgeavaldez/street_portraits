@@ -1,0 +1,5 @@
+<h1>Edit Neighbor</h1>
+
+<%= render "form.html", Map.put(assigns, :action, Routes.neighbor_path(@conn, :update, @neighbor)) %>
+
+<span><%= link "Back", to: Routes.neighbor_path(@conn, :index) %></span>

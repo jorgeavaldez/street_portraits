@@ -1,0 +1,18 @@
+<h1>Show Portrait</h1>
+
+<ul>
+
+  <li>
+    <strong>Url:</strong>
+    <%= @portrait.url %>
+  </li>
+
+  <li>
+    <strong>Body:</strong>
+    <%= @portrait.body %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.portrait_path(@conn, :edit, @portrait) %></span>
+<span><%= link "Back", to: Routes.portrait_path(@conn, :index) %></span>

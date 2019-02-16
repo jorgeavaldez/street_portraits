@@ -1,0 +1,26 @@
+<section class="phx-hero">
+  <h1>Street Portraits</h1>
+  <p>Meet your neighbors. Read their stories.</p>
+  <p>Reach out and offer support!</p>
+</section>
+
+<section class="row">
+  <article class="column">
+    <h2>Portraits</h2>
+    <button>Browse</button>
+  </article>
+  <article class="column">
+    <h2>Help</h2>
+    <ul>
+      <li>
+        <a href="https://elixirforum.com/c/phoenix-forum">Forum</a>
+      </li>
+      <li>
+        <a href="https://webchat.freenode.net/?channels=elixir-lang">#elixir-lang on Freenode IRC</a>
+      </li>
+      <li>
+        <a href="https://twitter.com/elixirphoenix">Twitter @elixirphoenix</a>
+      </li>
+    </ul>
+  </article>
+</section>

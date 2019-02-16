@@ -1,0 +1,33 @@
+<h1>Show Neighbor</h1>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @neighbor.name %>
+  </li>
+
+  <li>
+    <strong>Approx location:</strong>
+    <%= @neighbor.approx_location %>
+  </li>
+
+  <li>
+    <strong>Phone:</strong>
+    <%= @neighbor.phone %>
+  </li>
+
+  <li>
+    <strong>Address:</strong>
+    <%= @neighbor.address %>
+  </li>
+
+  <li>
+    <strong>Preferred channel:</strong>
+    <%= @neighbor.preferred_channel %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.neighbor_path(@conn, :edit, @neighbor) %></span>
+<span><%= link "Back", to: Routes.neighbor_path(@conn, :index) %></span>
