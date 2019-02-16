@@ -1,0 +1,28 @@
+<h1>Listing Outreach</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Url</th>
+      <th>Body</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for outreach <- @outreach do %>
+    <tr>
+      <td><%= outreach.url %></td>
+      <td><%= outreach.body %></td>
+
+      <td>
+        <%= link "Show", to: Routes.outreach_path(@conn, :show, outreach) %>
+        <%= link "Edit", to: Routes.outreach_path(@conn, :edit, outreach) %>
+        <%= link "Delete", to: Routes.outreach_path(@conn, :delete, outreach), method: :delete, data: [confirm: "Are you sure?"] %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Outreach", to: Routes.outreach_path(@conn, :new) %></span>

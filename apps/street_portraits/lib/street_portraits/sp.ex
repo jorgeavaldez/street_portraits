@@ -197,4 +197,100 @@ defmodule StreetPortraits.SP do
   def change_portrait(%Portrait{} = portrait) do
     Portrait.changeset(portrait, %{})
   end
+
+  alias StreetPortraits.SP.Outreach
+
+  @doc """
+  Returns the list of outreach.
+
+  ## Examples
+
+      iex> list_outreach()
+      [%Outreach{}, ...]
+
+  """
+  def list_outreach do
+    Repo.all(Outreach)
+  end
+
+  @doc """
+  Gets a single outreach.
+
+  Raises `Ecto.NoResultsError` if the Outreach does not exist.
+
+  ## Examples
+
+      iex> get_outreach!(123)
+      %Outreach{}
+
+      iex> get_outreach!(456)
+      ** (Ecto.NoResultsError)
+
+  """
+  def get_outreach!(id), do: Repo.get!(Outreach, id)
+
+  @doc """
+  Creates a outreach.
+
+  ## Examples
+
+      iex> create_outreach(%{field: value})
+      {:ok, %Outreach{}}
+
+      iex> create_outreach(%{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def create_outreach(attrs \\ %{}) do
+    %Outreach{}
+    |> Outreach.changeset(attrs)
+    |> Repo.insert()
+  end
+
+  @doc """
+  Updates a outreach.
+
+  ## Examples
+
+      iex> update_outreach(outreach, %{field: new_value})
+      {:ok, %Outreach{}}
+
+      iex> update_outreach(outreach, %{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def update_outreach(%Outreach{} = outreach, attrs) do
+    outreach
+    |> Outreach.changeset(attrs)
+    |> Repo.update()
+  end
+
+  @doc """
+  Deletes a Outreach.
+
+  ## Examples
+
+      iex> delete_outreach(outreach)
+      {:ok, %Outreach{}}
+
+      iex> delete_outreach(outreach)
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def delete_outreach(%Outreach{} = outreach) do
+    Repo.delete(outreach)
+  end
+
+  @doc """
+  Returns an `%Ecto.Changeset{}` for tracking outreach changes.
+
+  ## Examples
+
+      iex> change_outreach(outreach)
+      %Ecto.Changeset{source: %Outreach{}}
+
+  """
+  def change_outreach(%Outreach{} = outreach) do
+    Outreach.changeset(outreach, %{})
+  end
 end

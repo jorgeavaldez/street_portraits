@@ -1,0 +1,18 @@
+<h1>Show Outreach</h1>
+
+<ul>
+
+  <li>
+    <strong>Url:</strong>
+    <%= @outreach.url %>
+  </li>
+
+  <li>
+    <strong>Body:</strong>
+    <%= @outreach.body %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.outreach_path(@conn, :edit, @outreach) %></span>
+<span><%= link "Back", to: Routes.outreach_path(@conn, :index) %></span>

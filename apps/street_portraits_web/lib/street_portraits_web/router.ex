@@ -20,6 +20,7 @@ defmodule StreetPortraitsWeb.Router do
 
     resources "/neighbors", NeighborController
     resources "/portraits", PortraitController
+    resources "/outreach", OutreachController
   end
 
   # Other scopes may use custom stacks.
