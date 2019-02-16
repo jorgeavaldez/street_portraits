@@ -1,0 +1,18 @@
+<h1>Show Account type</h1>
+
+<ul>
+
+  <li>
+    <strong>Type:</strong>
+    <%= @account_type.type %>
+  </li>
+
+  <li>
+    <strong>Actions:</strong>
+    <%= @account_type.actions %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.account_type_path(@conn, :edit, @account_type) %></span>
+<span><%= link "Back", to: Routes.account_type_path(@conn, :index) %></span>

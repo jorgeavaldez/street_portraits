@@ -1,0 +1,28 @@
+<h1>Listing Account types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Actions</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for account_type <- @account_types do %>
+    <tr>
+      <td><%= account_type.type %></td>
+      <td><%= account_type.actions %></td>
+
+      <td>
+        <%= link "Show", to: Routes.account_type_path(@conn, :show, account_type) %>
+        <%= link "Edit", to: Routes.account_type_path(@conn, :edit, account_type) %>
+        <%= link "Delete", to: Routes.account_type_path(@conn, :delete, account_type), method: :delete, data: [confirm: "Are you sure?"] %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Account type", to: Routes.account_type_path(@conn, :new) %></span>
