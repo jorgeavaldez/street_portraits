@@ -15,7 +15,10 @@
             <li><a href="https://hexdocs.pm/phoenix/overview.html">Get Started</a></li>
           </ul>
         </nav>
-        <h1>Street Portraits</h1>
+        <div class="logo-container">
+          <img class="logo" src="<%= Routes.static_path(@conn, "/images/GreenLogo.png") %>" />
+          <h3>StreetPortraits</h3>
+        </div>
       </section>
     </header>
     <main role="main" class="container">
