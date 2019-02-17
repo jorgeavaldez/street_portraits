@@ -1,4 +1,4 @@
-<h1>New Outreach</h1>
+<h1>Helping <%= @name %> /h1>
 
 <%= render "form.html", Map.put(assigns, :action, Routes.outreach_path(@conn, :create)) %>
 

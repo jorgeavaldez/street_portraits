@@ -31,4 +31,4 @@
 
 <span><%= link "Edit", to: Routes.neighbor_path(@conn, :edit, @neighbor) %></span>
 <span><%= link "Back", to: Routes.neighbor_path(@conn, :index) %></span>
-<span><%= link "Reach Out", to: Routes.outreach_path(@conn, :new, %{id: @neighbor.id}) %></span>
+<span><%= link "Reach Out", to: Routes.outreach_path(@conn, :new, %{id: @neighbor.id, name: @neighbor.name}) %></span>

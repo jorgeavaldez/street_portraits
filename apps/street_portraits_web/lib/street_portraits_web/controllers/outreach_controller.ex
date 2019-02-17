@@ -9,9 +9,9 @@ defmodule StreetPortraitsWeb.OutreachController do
     render(conn, "index.html", outreach: outreach)
   end
 
-  def new(conn, %{"id" => neighbor_id}) do
+  def new(conn, %{"id" => neighbor_id, "name" => name}) do
     changeset = SP.change_outreach(%Outreach{id: neighbor_id})
-    render(conn, "new.html", changeset: changeset)
+    render(conn, "new.html", changeset: changeset, name: name)
   end
 
   def create(conn, %{"outreach" => outreach_params}) do

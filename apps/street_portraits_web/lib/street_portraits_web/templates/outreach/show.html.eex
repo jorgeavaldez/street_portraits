@@ -1,38 +1,35 @@
 <h1>Show Outreach</h1>
 
-<ul>
+<div>
+  <strong>Type:</strong>
+  <%= @outreach.type %>
+</div>
 
-  <li>
-    <strong>Type:</strong>
-    <%= @outreach.type %>
-  </li>
+<div>
+  <strong>Name:</strong>
+  <%= @outreach.name %>
+</div>
 
-  <li>
-    <strong>Name:</strong>
-    <%= @outreach.name %>
-  </li>
+<div>
+  <strong>Email:</strong>
+  <%= @outreach.email %>
+</div>
 
-  <li>
-    <strong>Email:</strong>
-    <%= @outreach.email %>
-  </li>
+<div>
+  <strong>Phone:</strong>
+  <%= @outreach.phone %>
+</div>
 
-  <li>
-    <strong>Phone:</strong>
-    <%= @outreach.phone %>
-  </li>
+<div>
+  <strong>Address:</strong>
+  <%= @outreach.address %>
+</div>
 
-  <li>
-    <strong>Address:</strong>
-    <%= @outreach.address %>
-  </li>
+<div>
+  <strong>More:</strong>
+  <pre><%= @outreach.more %></pre>
+</div>
 
-  <li>
-    <strong>More:</strong>
-    <%= @outreach.more %>
-  </li>
-
-</ul>
 
 <span><%= link "Edit", to: Routes.outreach_path(@conn, :edit, @outreach) %></span>
 <span><%= link "Back", to: Routes.outreach_path(@conn, :index) %></span>
