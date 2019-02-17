@@ -3,9 +3,6 @@
     <div class="portrait">
       <img src="<%= portrait.url %>" />
       <h3><%= portrait.neighbor.name %></h3>
-      <p>
-        <%= portrait.body %>
-      </p>
     </div>
   <% end %>
 </div>

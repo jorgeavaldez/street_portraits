@@ -2,18 +2,37 @@
 
 @import "./phoenix.css";
 
+header {
+  border: none;
+  background: none;
+}
+
 .portraits {
   display: flex;
 
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   align-content: center;
   flex-wrap: wrap;
+
+  margin-bottom: 1rem;
+}
+
+.portraits a {
+  color: unset;
+}
+
+.portraits button {
+  background-color: white;
+  color: #149816;
+  border: solid thin #149816;
+  display: block;
 }
 
 .portrait {
-  border: solid thin #333;
-  padding: 1rem 1rem 0 1rem;
+  border: solid thin silver;
+  border-radius: 6px;
+  padding: 1.5rem 1.5rem 0 1.5rem;
   min-width: 24rem;
   margin: 0 0.5rem 2rem 0.5rem;
 
@@ -31,6 +50,12 @@
   margin: 0 0 1rem 0;
 }
 
+.portrait h3 {
+  text-align: center;
+  display: block;
+  height: 3rem;
+}
+
 .logo {
   max-height: 4rem;
   margin: 1rem;
@@ -39,13 +64,25 @@
 
 .logo-container {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
   align-items: center;
   align-content: center;
 }
 
-.logo-container h3 {
+.logo-container h2 {
   display: inline;
   margin: 0;
   padding: 0;
+  color: #149816;
+}
+
+footer {
+  color: white;
+  background-color: #149816;
+  border-radius: 6px;
+  padding: 3rem 3rem 1rem 3rem;
+}
+
+#about-section-header {
+  text-align: center;
 }
