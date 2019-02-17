@@ -1,12 +1,12 @@
 defmodule StreetPortraits.SP.Portrait do
   use Ecto.Schema
   import Ecto.Changeset
-
+  alias StreetPortraits.SP.Neighbor
 
   schema "portraits" do
     field :body, :string
     field :url, :string
-    field :neighbor, :id
+    belongs_to :neighbor, Neighbor
 
     timestamps()
   end

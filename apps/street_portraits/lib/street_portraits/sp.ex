@@ -114,7 +114,7 @@ defmodule StreetPortraits.SP do
 
   """
   def list_portraits do
-    Repo.all(Portrait)
+    Repo.all(Portrait) |> Repo.preload(:neighbor)
   end
 
   @doc """
