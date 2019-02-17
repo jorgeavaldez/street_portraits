@@ -49,12 +49,8 @@ I was still struggling and one night I had a panic attack. My friends said: “W
 })
 
 StreetPortraits.Repo.insert!(%StreetPortraits.SP.Portrait{
-      body: "I made a mistake when I was younger and got caught smoking dope. I ended up having to do a short prison sentence. After that I decided to leave my home town of Derby.
-
-I ended up living in a London Fields tower block with a friend. I moved in with him but we fell out after a while and I couldn’t find anywhere else to go. I started squatting and travelling.
-
+      body: "I made a mistake when I was younger and got caught smoking dope. I ended up having to do a short prison sentence. After that I decided to leave my home town of Derby. I ended up living in a London Fields tower block with a friend. I moved in with him but we fell out after a while and I couldn’t find anywhere else to go. I started squatting and travelling.
 When I was in London I started taking drugs. That stopped me sorting myself out and finding a place. It wasn’t a nice time and there were not many jobs around.
-
 I ended up being homeless on the streets on and off. I would sleep rough for a few weeks or a month. I served a few spells in prison but I would usually end up on the streets again as when I got out I had nowhere to live.",
       url: "https://images.unsplash.com/photo-1547524033-e1f60851349b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60",
       neighbor_id: 3
