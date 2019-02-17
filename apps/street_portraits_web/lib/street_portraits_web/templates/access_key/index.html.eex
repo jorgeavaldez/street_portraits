@@ -1,0 +1,28 @@
+<h1>Listing Access keys</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Access key</th>
+      <th>Permissions</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for access_key <- @access_keys do %>
+    <tr>
+      <td><%= access_key.access_key %></td>
+      <td><%= access_key.account_type.type %></td>
+
+      <td>
+        <%= link "Show", to: Routes.access_key_path(@conn, :show, access_key) %>
+        <%= link "Edit", to: Routes.access_key_path(@conn, :edit, access_key) %>
+        <%= link "Delete", to: Routes.access_key_path(@conn, :delete, access_key), method: :delete, data: [confirm: "Are you sure?"] %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Access key", to: Routes.access_key_path(@conn, :new) %></span>

@@ -1,0 +1,13 @@
+<h1>Show Access key</h1>
+
+<ul>
+
+  <li>
+    <strong>Access key:</strong>
+    <%= @access_key.access_key %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.access_key_path(@conn, :edit, @access_key) %></span>
+<span><%= link "Back", to: Routes.access_key_path(@conn, :index) %></span>
