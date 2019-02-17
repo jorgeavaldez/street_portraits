@@ -5,9 +5,9 @@
 
 <div class="body-content">
   <%= @portrait.body %>
+  <button class="reach-out"><%= link "Reach Out", to: Routes.outreach_path(@conn, :new, %{id: @portrait.neighbor.id, name: @portrait.neighbor.name}) %></button>
 </div>
 
 
-<span><%= link "Edit", to: Routes.portrait_path(@conn, :edit, @portrait) %></span>
-<span><%= link "Back", to: Routes.portrait_path(@conn, :index) %></span>
-<span><%= link "Reach Out", to: Routes.outreach_path(@conn, :new, %{id: @portrait.neighbor.id, name: @portrait.neighbor.name}) %></span>
+<br>
+<button class="reach-out"><%= link "Back", to: Routes.portrait_path(@conn, :index) %></button class="reach-out">

@@ -2,6 +2,10 @@
 
 @import "./phoenix.css";
 
+h1, h2, h3, h4, h5 {
+  font-family: Futura;
+}
+
 header {
   border: none;
   background: none;
@@ -27,6 +31,18 @@ header {
   color: #149816;
   border: solid thin #149816;
   display: block;
+}
+
+button.reach-out {
+  background-color: white;
+  color: #149816;
+  border: solid thin #149816;
+  display: block;
+}
+
+button.reach-out a {
+  background-color: white;
+  color: #149816;
 }
 
 .portrait {
