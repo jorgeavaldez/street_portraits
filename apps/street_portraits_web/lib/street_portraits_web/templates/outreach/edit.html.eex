@@ -1,0 +1,5 @@
+<h1>Edit Outreach</h1>
+
+<%= render "form.html", Map.put(assigns, :action, Routes.outreach_path(@conn, :update, @outreach)) %>
+
+<span><%= link "Back", to: Routes.outreach_path(@conn, :index) %></span>

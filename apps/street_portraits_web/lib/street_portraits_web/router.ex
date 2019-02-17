@@ -20,6 +20,7 @@ defmodule StreetPortraitsWeb.Router do
 
     resources "/neighbors", NeighborController
     resources "/portraits", PortraitController
+    resources "/outreach", OutreachController
 
     resources "/account_types", AccountTypeController
     resources "/access_keys", AccessKeyController
