@@ -1,16 +1,11 @@
-<h1>Listing Portraits</h1>
-
 <div class="portraits">
   <%= for portrait <- @portraits do %>
-    <img src="<%= portrait.url %>" />
-    <p>
-      <%= portrait.body %>
-    </p>
-
-    <div class="admin-controls">
-      <%= link "Show", to: Routes.portrait_path(@conn, :show, portrait) %>
-      <%= link "Edit", to: Routes.portrait_path(@conn, :edit, portrait) %>
-      <%= link "Delete", to: Routes.portrait_path(@conn, :delete, portrait), method: :delete, data: [confirm: "Are you sure?"] %>
+    <div class="portrait">
+      <img src="<%= portrait.url %>" />
+      <h3><%= portrait.neighbor.name %></h3>
+      <p>
+        <%= portrait.body %>
+      </p>
     </div>
   <% end %>
 </div>

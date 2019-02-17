@@ -36,17 +36,17 @@ StreetPortraits.Repo.insert!(%StreetPortraits.SP.Neighbor{
 StreetPortraits.Repo.insert!(%StreetPortraits.SP.Portrait{
       body: "Here's some body",
       url: "https://images.unsplash.com/photo-1518398046578-8cca57782e17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60",
-      neighbor: 1
+      neighbor_id: 1
 })
 
 StreetPortraits.Repo.insert!(%StreetPortraits.SP.Portrait{
       body: "Here's another body",
       url: "https://www.motherjones.com/wp-content/uploads/2017/11/20171117_20140429_sha_t129_141.jpg?w=990",
-      neighbor: 2
+      neighbor_id: 2
 })
 
 StreetPortraits.Repo.insert!(%StreetPortraits.SP.Portrait{
       body: "Here's the last body",
       url: "https://images.unsplash.com/photo-1547524033-e1f60851349b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60",
-      neighbor: 3
+      neighbor_id: 3
 })
