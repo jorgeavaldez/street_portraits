@@ -2,7 +2,6 @@ defmodule StreetPortraits.SP.Portrait do
   use Ecto.Schema
   import Ecto.Changeset
 
-
   schema "portraits" do
     field :body, :string
     field :url, :string
