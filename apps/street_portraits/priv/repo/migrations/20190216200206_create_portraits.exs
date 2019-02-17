@@ -4,7 +4,7 @@ defmodule StreetPortraits.Repo.Migrations.CreatePortraits do
   def change do
     create table(:portraits) do
       add :url, :string
-      add :body, :string
+      add :body, :text
       add :neighbor_id, references(:neighbors, on_delete: :nothing)
 
       timestamps()

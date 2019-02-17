@@ -4,7 +4,9 @@
 </div>
 
 <div class="body-content">
-  <%= @portrait.body %>
+  <p>
+    <%= @portrait.body %>
+  </p>
   <button class="reach-out"><%= link "Reach Out", to: Routes.outreach_path(@conn, :new, %{id: @portrait.neighbor.id, name: @portrait.neighbor.name}) %></button>
 </div>
 
