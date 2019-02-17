@@ -6,7 +6,7 @@ defmodule StreetPortraits.Repo.Migrations.CreateUsers do
       add :name, :string
       add :email, :string
       add :phash, :string
-      add :account_type_id, references(:account_types, on_delete: :nothing)
+      add :account_type_id, references(:account_types, on_delete: :delete_all)
 
       timestamps()
     end
