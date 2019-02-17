@@ -1,11 +1,10 @@
 <div class="portraits">
   <%= for portrait <- @portraits do %>
-    <div class="portrait">
-      <img src="<%= portrait.url %>" />
-      <h3><%= portrait.neighbor.name %></h3>
-      <p>
-        <%= portrait.body %>
-      </p>
-    </div>
+    <%= link to: "/portraits/#{portrait.id}" do %>
+      <div class="portrait">
+        <img src="<%= portrait.url %>" />
+        <h3><%= portrait.neighbor.name %></h3>
+      </div>
+    <% end %>
   <% end %>
 </div>

@@ -9,20 +9,23 @@
   </head>
   <body>
     <header>
-      <section class="container">
-        <nav role="navigation">
-          <ul>
-            <li><a href="https://hexdocs.pm/phoenix/overview.html">Get Started</a></li>
-          </ul>
-        </nav>
-        <h1>Street Portraits</h1>
-      </section>
+      <div class="logo-container">
+        <img class="logo" src="<%= Routes.static_path(@conn, "/images/GreenLogo.png") %>" />
+        <h2>Street Portraits</h2>
+      </div>
     </header>
     <main role="main" class="container">
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
       <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
       <%= render @view_module, @view_template, assigns %>
     </main>
+    <footer class="page-footer" id="about-section">
+      <article>
+        <h2 id="about-section-header">About Street Portraits</h2>
+        <p>Dallas is experiencing an increase in homelessness and unsheltered homeless. Many of those who live, work, or visit Dallas have noticed this and the associated impacts to the Dallas community.</p>
+        <p>Our mission is to provide a spotlight on the homelessness and unsheltered homeless in the City of Dallas to provide an avenue for them to share their story and receive support.</p>
+      </article>
+    </footer>
     <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
   </body>
 </html>
