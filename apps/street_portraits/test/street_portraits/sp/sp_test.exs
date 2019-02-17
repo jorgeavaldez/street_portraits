@@ -130,4 +130,73 @@ defmodule StreetPortraits.SPTest do
       assert %Ecto.Changeset{} = SP.change_portrait(portrait)
     end
   end
+
+  describe "outreach" do
+    alias StreetPortraits.SP.Outreach
+
+    @valid_attrs %{address: "some address", email: "some email", more: "some more", name: "some name", phone: "some phone", type: "some type"}
+    @update_attrs %{address: "some updated address", email: "some updated email", more: "some updated more", name: "some updated name", phone: "some updated phone", type: "some updated type"}
+    @invalid_attrs %{address: nil, email: nil, more: nil, name: nil, phone: nil, type: nil}
+
+    def outreach_fixture(attrs \\ %{}) do
+      {:ok, outreach} =
+        attrs
+        |> Enum.into(@valid_attrs)
+        |> SP.create_outreach()
+
+      outreach
+    end
+
+    test "list_outreach/0 returns all outreach" do
+      outreach = outreach_fixture()
+      assert SP.list_outreach() == [outreach]
+    end
+
+    test "get_outreach!/1 returns the outreach with given id" do
+      outreach = outreach_fixture()
+      assert SP.get_outreach!(outreach.id) == outreach
+    end
+
+    test "create_outreach/1 with valid data creates a outreach" do
+      assert {:ok, %Outreach{} = outreach} = SP.create_outreach(@valid_attrs)
+      assert outreach.address == "some address"
+      assert outreach.email == "some email"
+      assert outreach.more == "some more"
+      assert outreach.name == "some name"
+      assert outreach.phone == "some phone"
+      assert outreach.type == "some type"
+    end
+
+    test "create_outreach/1 with invalid data returns error changeset" do
+      assert {:error, %Ecto.Changeset{}} = SP.create_outreach(@invalid_attrs)
+    end
+
+    test "update_outreach/2 with valid data updates the outreach" do
+      outreach = outreach_fixture()
+      assert {:ok, %Outreach{} = outreach} = SP.update_outreach(outreach, @update_attrs)
+      assert outreach.address == "some updated address"
+      assert outreach.email == "some updated email"
+      assert outreach.more == "some updated more"
+      assert outreach.name == "some updated name"
+      assert outreach.phone == "some updated phone"
+      assert outreach.type == "some updated type"
+    end
+
+    test "update_outreach/2 with invalid data returns error changeset" do
+      outreach = outreach_fixture()
+      assert {:error, %Ecto.Changeset{}} = SP.update_outreach(outreach, @invalid_attrs)
+      assert outreach == SP.get_outreach!(outreach.id)
+    end
+
+    test "delete_outreach/1 deletes the outreach" do
+      outreach = outreach_fixture()
+      assert {:ok, %Outreach{}} = SP.delete_outreach(outreach)
+      assert_raise Ecto.NoResultsError, fn -> SP.get_outreach!(outreach.id) end
+    end
+
+    test "change_outreach/1 returns a outreach changeset" do
+      outreach = outreach_fixture()
+      assert %Ecto.Changeset{} = SP.change_outreach(outreach)
+    end
+  end
 end
