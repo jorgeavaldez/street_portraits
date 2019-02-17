@@ -4,6 +4,8 @@ defmodule StreetPortraitsWeb.PortraitController do
   alias StreetPortraits.SP
   alias StreetPortraits.SP.Portrait
 
+  alias StreetPortraits.Repo
+
   def index(conn, _params) do
     portraits = SP.list_portraits()
     render(conn, "index.html", portraits: portraits)
@@ -27,7 +29,8 @@ defmodule StreetPortraitsWeb.PortraitController do
   end
 
   def show(conn, %{"id" => id}) do
-    portrait = SP.get_portrait!(id)
+    portrait = SP.get_portrait!(id) |> Repo.preload(:neighbor)
+
     render(conn, "show.html", portrait: portrait)
   end
 
